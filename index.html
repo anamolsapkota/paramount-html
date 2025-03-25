@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Landen - Premium Real Estate Development</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: '#3176FF',
+secondary: '#1B4332'
+},
+borderRadius: {
+'none': '0px',
+'sm': '4px',
+DEFAULT: '8px',
+'md': '12px',
+'lg': '16px',
+'xl': '20px',
+'2xl': '24px',
+'3xl': '32px',
+'full': '9999px',
+'button': '8px'
+}
+}
+}
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+.gradient-overlay {
+background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.9) 50%, rgba(255,255,255,0) 100%);
+}
+@keyframes fadeInUp {
+from {
+opacity: 0;
+transform: translateY(20px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+@keyframes slideIn {
+from {
+opacity: 0;
+transform: translateX(-20px);
+}
+to {
+opacity: 1;
+transform: translateX(0);
+}
+}
+.animate-fadeInUp {
+animation: fadeInUp 0.6s ease-out forwards;
+}
+.animate-slideIn {
+animation: slideIn 0.6s ease-out forwards;
+}
+.hover-scale {
+transition: transform 0.3s ease;
+}
+.hover-scale:hover {
+transform: scale(1.02);
+}
+</style>
+</head>
+<body class="bg-white">
+<header class="relative">
+<nav class="absolute w-full z-10 px-8 py-6">
+<div class="max-w-7xl mx-auto flex justify-between items-center">
+<a href="#" class="font-['Pacifico'] text-3xl text-secondary">logo</a>
+<div class="flex items-center space-x-8">
+<a href="#" class="text-secondary hover:text-primary cursor-pointer">Residential</a>
+<a href="#" class="text-secondary hover:text-primary cursor-pointer">Industrial</a>
+<a href="#" class="text-secondary hover:text-primary cursor-pointer">Funds</a>
+<a href="#" class="text-secondary hover:text-primary cursor-pointer">About</a>
+<button class="bg-secondary text-white px-6 py-2 !rounded-button hover:bg-opacity-90 cursor-pointer whitespace-nowrap">Contact Us</button>
+</div>
+</div>
+</nav>
+<div class="relative h-[800px] overflow-hidden">
+<div class="absolute inset-0">
+<img src="https://public.readdy.ai/ai/img_res/bc9bb7326c668a81f5aedc601fbbd5ae.jpg" class="w-full h-full object-cover" alt="Hero Image">
+<div class="absolute inset-0 gradient-overlay"></div>
+</div>
+<div class="relative max-w-7xl mx-auto h-full flex items-center px-8">
+<div class="max-w-2xl">
+<h1 class="text-6xl font-bold text-[#2D2D2D] mb-6 animate-fadeInUp opacity-0" style="animation-delay: 0.3s">Go further in real estate excellence</h1>
+<p class="text-xl text-[#2D2D2D] mb-8 animate-fadeInUp opacity-0" style="animation-delay: 0.6s">At Landen, we transform spaces into extraordinary places where communities thrive and investments flourish. Experience the pinnacle of real estate development with our visionary approach.</p>
+<button class="bg-[#E66123] text-white px-8 py-3 !rounded-button hover:bg-opacity-90 text-lg cursor-pointer whitespace-nowrap animate-fadeInUp opacity-0 hover-scale" style="animation-delay: 0.9s">Discover Our Projects</button>
+</div>
+</div>
+</div>
+</header>
+<section class="py-24 bg-white">
+<div class="max-w-7xl mx-auto px-8">
+<h2 class="text-4xl font-bold text-secondary mb-16 text-center">What We Do</h2>
+<div class="grid grid-cols-3 gap-8" id="projectCards">
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+const observer = new IntersectionObserver((entries) => {
+entries.forEach((entry, index) => {
+if (entry.isIntersecting) {
+entry.target.style.animation = `fadeInUp 0.6s ease-out ${index * 0.2}s forwards`;
+}
+});
+}, { threshold: 0.1 });
+document.querySelectorAll('#projectCards > div').forEach((card) => {
+card.style.opacity = "0";
+observer.observe(card);
+});
+});
+</script>
+<div class="group cursor-pointer">
+<div class="overflow-hidden rounded-lg mb-4">
+<img src="https://public.readdy.ai/ai/img_res/fd380299ac477c666482401108d4d709.jpg" class="w-full h-[300px] object-cover transform group-hover:scale-105 transition-transform duration-500" alt="Residential">
+</div>
+<h3 class="text-2xl font-bold text-secondary mb-2">Residential</h3>
+<p class="text-gray-600 mb-4">Creating exceptional living spaces that combine luxury, comfort, and sustainability. Our residential developments set new standards in modern living.</p>
+<a href="#" class="text-primary flex items-center hover:underline">Learn more <i class="ri-arrow-right-line ml-2"></i></a>
+</div>
+<div class="group cursor-pointer">
+<div class="overflow-hidden rounded-lg mb-4">
+<img src="https://public.readdy.ai/ai/img_res/3113ba15f695a9c7cb7d43a738cc80a6.jpg" class="w-full h-[300px] object-cover transform group-hover:scale-105 transition-transform duration-500" alt="Industrial">
+</div>
+<h3 class="text-2xl font-bold text-secondary mb-2">Industrial</h3>
+<p class="text-gray-600 mb-4">Developing cutting-edge industrial spaces that drive innovation and efficiency. Our facilities are designed to meet the evolving needs of modern business.</p>
+<a href="#" class="text-primary flex items-center hover:underline">Learn more <i class="ri-arrow-right-line ml-2"></i></a>
+</div>
+<div class="group cursor-pointer">
+<div class="overflow-hidden rounded-lg mb-4">
+<img src="https://public.readdy.ai/ai/img_res/6ffb2362693a88cd5414a5145f42ddc2.jpg" class="w-full h-[300px] object-cover transform group-hover:scale-105 transition-transform duration-500" alt="Funds Management">
+</div>
+<h3 class="text-2xl font-bold text-secondary mb-2">Funds Management</h3>
+<p class="text-gray-600 mb-4">Expert management of real estate investment funds, delivering consistent returns through strategic portfolio management and market insight.</p>
+<a href="#" class="text-primary flex items-center hover:underline">Learn more <i class="ri-arrow-right-line ml-2"></i></a>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-[#2D2D2D] text-white py-24">
+<div class="max-w-7xl mx-auto px-8">
+<h2 class="text-4xl font-bold mb-16 text-center">The Landen Difference</h2>
+<div class="grid grid-cols-4 gap-8">
+<div class="text-center">
+<div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+<i class="ri-map-pin-line ri-2x"></i>
+</div>
+<h3 class="text-xl font-bold mb-2">Premium Locations</h3>
+<p class="text-gray-200">Strategic locations that offer unparalleled value and growth potential</p>
+</div>
+<div class="text-center">
+<div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+<i class="ri-funds-line ri-2x"></i>
+</div>
+<h3 class="text-xl font-bold mb-2">Asset-backed Investment</h3>
+<p class="text-gray-200">Secure investments supported by premium real estate assets</p>
+</div>
+<div class="text-center">
+<div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+<i class="ri-customer-service-line ri-2x"></i>
+</div>
+<h3 class="text-xl font-bold mb-2">Exceptional Journey</h3>
+<p class="text-gray-200">Personalized service and support throughout your investment journey</p>
+</div>
+<div class="text-center">
+<div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+<i class="ri-heart-line ri-2x"></i>
+</div>
+<h3 class="text-xl font-bold mb-2">Positive Impact</h3>
+<p class="text-gray-200">Creating sustainable communities that enhance lives</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-white">
+<div class="max-w-7xl mx-auto px-8">
+<h2 class="text-4xl font-bold text-secondary mb-16">Featured Projects</h2>
+<div class="grid grid-cols-3 gap-8" id="projectCards">
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+const observer = new IntersectionObserver((entries) => {
+entries.forEach((entry, index) => {
+if (entry.isIntersecting) {
+entry.target.style.animation = `fadeInUp 0.6s ease-out ${index * 0.2}s forwards`;
+}
+});
+}, { threshold: 0.1 });
+document.querySelectorAll('#projectCards > div').forEach((card) => {
+card.style.opacity = "0";
+observer.observe(card);
+});
+});
+</script>
+<div class="rounded-lg overflow-hidden shadow-lg group cursor-pointer">
+<div class="relative overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/6c58420b11cd2ab7c4ad214a787cb877.jpg" class="w-full h-[250px] object-cover transform group-hover:scale-105 transition-transform duration-500" alt="The Grove">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-secondary mb-2">The Grove at Oakville</h3>
+<p class="text-gray-600 mb-4">Luxury residences set within 20 acres of preserved woodland</p>
+<div class="flex justify-between items-center">
+<span class="text-primary">From $1.2M</span>
+<span class="bg-[#E66123] bg-opacity-10 text-[#E66123] px-3 py-1 rounded-full text-sm">Now Selling</span>
+</div>
+</div>
+</div>
+<div class="rounded-lg overflow-hidden shadow-lg group cursor-pointer">
+<div class="relative overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/aa9e7a9f42952006e6c3c896caed544f.jpg" class="w-full h-[250px] object-cover transform group-hover:scale-105 transition-transform duration-500" alt="Waterfront">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-secondary mb-2">Waterfront Residences</h3>
+<p class="text-gray-600 mb-4">Exclusive waterfront apartments with panoramic views</p>
+<div class="flex justify-between items-center">
+<span class="text-primary">From $2.5M</span>
+<span class="bg-[#CCCCCC] bg-opacity-20 text-[#2D2D2D] px-3 py-1 rounded-full text-sm">Coming Soon</span>
+</div>
+</div>
+</div>
+<div class="rounded-lg overflow-hidden shadow-lg group cursor-pointer">
+<div class="relative overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/313561b18409d2dd1af780b0c0212b57.jpg" class="w-full h-[250px] object-cover transform group-hover:scale-105 transition-transform duration-500" alt="Urban Quarter">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-secondary mb-2">Urban Quarter</h3>
+<p class="text-gray-600 mb-4">Mixed-use development in the heart of the city</p>
+<div class="flex justify-between items-center">
+<span class="text-primary">From $800K</span>
+<span class="bg-[#E66123] bg-opacity-10 text-[#E66123] px-3 py-1 rounded-full text-sm">Register Interest</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-gray-50">
+<div class="max-w-7xl mx-auto px-8">
+<h2 class="text-4xl font-bold text-secondary mb-16">Latest News</h2>
+<div class="grid grid-cols-3 gap-8" id="projectCards">
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+const observer = new IntersectionObserver((entries) => {
+entries.forEach((entry, index) => {
+if (entry.isIntersecting) {
+entry.target.style.animation = `fadeInUp 0.6s ease-out ${index * 0.2}s forwards`;
+}
+});
+}, { threshold: 0.1 });
+document.querySelectorAll('#projectCards > div').forEach((card) => {
+card.style.opacity = "0";
+observer.observe(card);
+});
+});
+</script>
+<article class="bg-white rounded-lg overflow-hidden shadow-lg">
+<img src="https://public.readdy.ai/ai/img_res/04c800ec429601dfe9c1da250226f239.jpg" class="w-full h-[200px] object-cover" alt="Sustainability News">
+<div class="p-6">
+<span class="text-sm text-gray-500">March 20, 2025</span>
+<h3 class="text-xl font-bold text-secondary mt-2 mb-3">Landen Achieves 5-Star Green Rating</h3>
+<p class="text-gray-600 mb-4">Our commitment to sustainable development reaches new heights with industry-leading certification.</p>
+<a href="#" class="text-primary hover:underline">Read more</a>
+</div>
+</article>
+<article class="bg-white rounded-lg overflow-hidden shadow-lg">
+<img src="https://public.readdy.ai/ai/img_res/058b435ef0645c727add3c2d53087fd9.jpg" class="w-full h-[200px] object-cover" alt="Project Completion">
+<div class="p-6">
+<span class="text-sm text-gray-500">March 15, 2025</span>
+<h3 class="text-xl font-bold text-secondary mt-2 mb-3">The Grove Welcomes First Residents</h3>
+<p class="text-gray-600 mb-4">Milestone achievement as our flagship development welcomes its founding community members.</p>
+<a href="#" class="text-primary hover:underline">Read more</a>
+</div>
+</article>
+<article class="bg-white rounded-lg overflow-hidden shadow-lg">
+<img src="https://public.readdy.ai/ai/img_res/dd09681702b960ef2d18fbb6d43867a5.jpg" class="w-full h-[200px] object-cover" alt="Investment News">
+<div class="p-6">
+<span class="text-sm text-gray-500">March 10, 2025</span>
+<h3 class="text-xl font-bold text-secondary mt-2 mb-3">Landen Launches Innovation Fund</h3>
+<p class="text-gray-600 mb-4">New investment vehicle focuses on next-generation real estate opportunities.</p>
+<a href="#" class="text-primary hover:underline">Read more</a>
+</div>
+</article>
+</div>
+</div>
+</section>
+<section class="py-24 bg-white">
+<div class="max-w-7xl mx-auto px-8">
+<h2 class="text-4xl font-bold text-secondary mb-16 text-center">Our Achievements</h2>
+<div class="grid grid-cols-4 gap-8">
+<div class="text-center p-8 bg-gray-50 rounded-lg hover:shadow-lg transition-shadow duration-300">
+<div class="text-4xl font-bold text-primary mb-2">15+</div>
+<div class="text-xl text-secondary mb-2">Years Experience</div>
+<p class="text-gray-600">Leading the industry with excellence and innovation</p>
+</div>
+<div class="text-center p-8 bg-gray-50 rounded-lg hover:shadow-lg transition-shadow duration-300">
+<div class="text-4xl font-bold text-primary mb-2">50+</div>
+<div class="text-xl text-secondary mb-2">Projects Completed</div>
+<p class="text-gray-600">Successful developments across residential and commercial sectors</p>
+</div>
+<div class="text-center p-8 bg-gray-50 rounded-lg hover:shadow-lg transition-shadow duration-300">
+<div class="text-4xl font-bold text-primary mb-2">$2B+</div>
+<div class="text-xl text-secondary mb-2">Assets Managed</div>
+<p class="text-gray-600">Professional management of premium property portfolios</p>
+</div>
+<div class="text-center p-8 bg-gray-50 rounded-lg hover:shadow-lg transition-shadow duration-300">
+<div class="text-4xl font-bold text-primary mb-2">10K+</div>
+<div class="text-xl text-secondary mb-2">Happy Residents</div>
+<p class="text-gray-600">Building thriving communities across our developments</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-gray-50">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-2 gap-16 items-center">
+<div>
+<h2 class="text-4xl font-bold text-secondary mb-8">Join Our Investment Community</h2>
+<p class="text-xl text-gray-600 mb-8">Stay ahead of the market with exclusive insights, investment opportunities, and development updates delivered directly to your inbox.</p>
+<form class="space-y-4">
+<div class="flex gap-4">
+<input type="text" placeholder="Your Name" class="flex-1 px-4 py-3 border border-gray-200 rounded-button focus:outline-none focus:border-primary">
+<input type="email" placeholder="Your Email" class="flex-1 px-4 py-3 border border-gray-200 rounded-button focus:outline-none focus:border-primary">
+</div>
+<div class="flex items-start gap-2 mt-4">
+<input type="checkbox" id="consent" class="mt-1">
+<label for="consent" class="text-sm text-gray-600">I agree to receive newsletters and updates from Landen. You can unsubscribe at any time.</label>
+</div>
+<button type="submit" class="w-full bg-primary text-white px-6 py-3 !rounded-button hover:bg-opacity-90 transition-colors duration-300">Subscribe Now</button>
+</form>
+</div>
+<div class="relative h-[500px] rounded-lg overflow-hidden">
+<img src="https://public.readdy.ai/ai/img_res/0a560a5e0070e973cb56a12236ec2283.jpg" class="w-full h-full object-cover" alt="Investment Community">
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+<div class="absolute bottom-8 left-8 right-8 text-white">
+<div class="text-2xl font-bold mb-2">Expert Insights</div>
+<p>Access market analysis and investment opportunities curated by industry leaders</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-white">
+<div class="max-w-7xl mx-auto px-8">
+<h2 class="text-4xl font-bold text-secondary mb-16 text-center">Frequently Asked Questions</h2>
+<div class="grid grid-cols-2 gap-8">
+<div class="space-y-6">
+<div class="bg-gray-50 p-6 rounded-lg cursor-pointer hover:shadow-lg transition-shadow duration-300" onclick="toggleFAQ(this)">
+<div class="flex justify-between items-center">
+<h3 class="text-xl font-bold text-secondary">What types of properties do you develop?</h3>
+<i class="ri-add-line text-primary text-2xl transition-transform duration-300"></i>
+</div>
+<div class="mt-4 text-gray-600 hidden">
+We specialize in premium residential developments, industrial facilities, and mixed-use projects. Our portfolio includes luxury apartments, townhouses, industrial parks, and retail spaces, all designed to meet the highest standards of quality and sustainability.
+</div>
+</div>
+<div class="bg-gray-50 p-6 rounded-lg cursor-pointer hover:shadow-lg transition-shadow duration-300" onclick="toggleFAQ(this)">
+<div class="flex justify-between items-center">
+<h3 class="text-xl font-bold text-secondary">How can I invest in your projects?</h3>
+<i class="ri-add-line text-primary text-2xl transition-transform duration-300"></i>
+</div>
+<div class="mt-4 text-gray-600 hidden">
+There are multiple ways to invest with Landen, including direct property purchase, managed funds, and investment partnerships. Our team of investment specialists can guide you through the options and help you choose the best strategy for your goals.
+</div>
+</div>
+<div class="bg-gray-50 p-6 rounded-lg cursor-pointer hover:shadow-lg transition-shadow duration-300" onclick="toggleFAQ(this)">
+<div class="flex justify-between items-center">
+<h3 class="text-xl font-bold text-secondary">What is your sustainability approach?</h3>
+<i class="ri-add-line text-primary text-2xl transition-transform duration-300"></i>
+</div>
+<div class="mt-4 text-gray-600 hidden">
+Sustainability is at the core of our development philosophy. We incorporate green building practices, energy-efficient systems, and environmentally conscious materials in all our projects. Our developments are designed to minimize environmental impact while maximizing comfort and efficiency.
+</div>
+</div>
+</div>
+<div class="space-y-6">
+<div class="bg-gray-50 p-6 rounded-lg cursor-pointer hover:shadow-lg transition-shadow duration-300" onclick="toggleFAQ(this)">
+<div class="flex justify-between items-center">
+<h3 class="text-xl font-bold text-secondary">What are your payment terms?</h3>
+<i class="ri-add-line text-primary text-2xl transition-transform duration-300"></i>
+</div>
+<div class="mt-4 text-gray-600 hidden">
+We offer flexible payment plans tailored to different buyer needs. This typically includes an initial deposit, progress payments during construction, and final settlement. Our sales team can provide detailed information about payment options for specific projects.
+</div>
+</div>
+<div class="bg-gray-50 p-6 rounded-lg cursor-pointer hover:shadow-lg transition-shadow duration-300" onclick="toggleFAQ(this)">
+<div class="flex justify-between items-center">
+<h3 class="text-xl font-bold text-secondary">How do you ensure quality control?</h3>
+<i class="ri-add-line text-primary text-2xl transition-transform duration-300"></i>
+</div>
+<div class="mt-4 text-gray-600 hidden">
+We maintain strict quality control standards throughout the development process. This includes regular inspections, third-party quality assessments, and adherence to international building standards. Our team of experts oversees every aspect of construction to ensure premium quality.
+</div>
+</div>
+<div class="bg-gray-50 p-6 rounded-lg cursor-pointer hover:shadow-lg transition-shadow duration-300" onclick="toggleFAQ(this)">
+<div class="flex justify-between items-center">
+<h3 class="text-xl font-bold text-secondary">What after-sales support do you provide?</h3>
+<i class="ri-add-line text-primary text-2xl transition-transform duration-300"></i>
+</div>
+<div class="mt-4 text-gray-600 hidden">
+Our commitment extends beyond the sale. We provide comprehensive after-sales support including property management services, maintenance assistance, and dedicated customer service. Our team remains available to address any concerns and ensure your satisfaction.
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+function toggleFAQ(element) {
+const content = element.querySelector('div:last-child');
+const icon = element.querySelector('i');
+content.classList.toggle('hidden');
+icon.classList.toggle('rotate-45');
+}
+</script>
+</section>
+<footer class="bg-[#2D2D2D] text-white py-16">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-4 gap-8 mb-12">
+<div>
+<a href="#" class="font-['Pacifico'] text-3xl mb-6 block">logo</a>
+<p class="text-gray-300">Transforming spaces into extraordinary places where communities thrive.</p>
+</div>
+<div>
+<h4 class="font-bold mb-4">Quick Links</h4>
+<ul class="space-y-2">
+<li><a href="#" class="text-gray-300 hover:text-white">About Us</a></li>
+<li><a href="#" class="text-gray-300 hover:text-white">Our Projects</a></li>
+<li><a href="#" class="text-gray-300 hover:text-white">Investments</a></li>
+<li><a href="#" class="text-gray-300 hover:text-white">News</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4">Contact</h4>
+<ul class="space-y-2">
+<li class="text-gray-300">123 Development Drive</li>
+<li class="text-gray-300">Sydney, NSW 2000</li>
+<li class="text-gray-300">1800 LANDEN</li>
+<li class="text-gray-300">info@landen.com</li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4">Follow Us</h4>
+<div class="flex space-x-4">
+<a href="#" class="text-gray-300 hover:text-white">
+<i class="ri-linkedin-fill ri-xl"></i>
+</a>
+<a href="#" class="text-gray-300 hover:text-white">
+<i class="ri-twitter-fill ri-xl"></i>
+</a>
+<a href="#" class="text-gray-300 hover:text-white">
+<i class="ri-instagram-fill ri-xl"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-700 pt-8">
+<div class="flex justify-between items-center">
+<p class="text-gray-400">&copy; 2025 Landen. All rights reserved.</p>
+<div class="flex space-x-6">
+<a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a>
+<a href="#" class="text-gray-400 hover:text-white">Terms of Service</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</body>
+</html>
